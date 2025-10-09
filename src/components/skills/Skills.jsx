@@ -1,24 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { animateSequentially } from '../utils/js/animations';
 import { setupIntersectionObserver } from '../utils/js/intersectionObserver';
+import skillsData from '../../datas/skills.json';
 
 function Skills() {
   const [visibleSkills, setVisibleSkills] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
   
-  const skills = [
-    { name: 'React', level: 40, category: 'frontend', icon: 'fa-brands fa-react' },
-    { name: 'JavaScript', level: 30, category: 'frontend', icon: 'fa-brands fa-js' },
-    { name: 'Node.js', level: 20, category: 'backend', icon: 'fa-brands fa-node-js' },
-    { name: 'CSS/SCSS', level: 80, category: 'frontend', icon: 'fa-brands fa-css3-alt' },
-    { name: 'Golang', level: 60, category: 'backend', icon: 'fa-brands fa-golang' },
-    { name: 'C/C++', level: 20, category: 'backend', icon: 'fa-solid fa-code' },
-    { name: 'Java', level: 20, category: 'backend', icon: 'fa-brands fa-java' },
-    { name: 'MongoDB', level: 30, category: 'backend', icon: 'fa-solid fa-database' },
-    { name: 'Docker', level: 10, category: 'backend', icon: 'fa-brands fa-docker' },
-    { name: 'Git', level: 80, category: 'tools', icon: 'fa-brands fa-git-alt' }
-  ];
+  const skills = skillsData.skills;
 
   // Intersection Observer
   useEffect(() => {

@@ -8,7 +8,7 @@
   padding: 2rem;
 
   &__container {
-    max-width: 48rem;
+    max-width: 64rem; // Augmenté pour accueillir 2 colonnes
     width: 100%;
   }
 
@@ -108,9 +108,14 @@
   }
 
   &__list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // 2 colonnes sur desktop
     gap: 1.5rem;
+    
+    // Responsive: 1 colonne sur mobile
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
@@ -133,7 +138,7 @@
     i {
       color: $cyan-digital;
       font-size: 1.25rem;
-    color: white;
+      color: white;
     }
   }
 
