@@ -1,31 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import contactData from '../../datas/contacts.json';
+import { setupSimpleIntersectionObserver } from '../utils/js/intersectionObserver';
 
 function Contact() {
   const [isVisible, setIsVisible] = useState(false);
   const contactRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const currentRef = contactRef.current;
-
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
+    return setupSimpleIntersectionObserver(contactRef, setIsVisible, 0.1);
   }, []);
 
   const contactLinks = contactData.contactLinks;
@@ -59,8 +41,8 @@ function Contact() {
             </div>
 
             <nav className="contact__links" aria-label="Contact and social media links">
-              {contactLinks.map((link, index) => ( <a
-                
+              {contactLinks.map((link, index) => (
+                <a
                   key={index}
                   href={link.url}
                   target="_blank"

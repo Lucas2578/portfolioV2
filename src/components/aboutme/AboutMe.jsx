@@ -1,22 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { animateTyping } from '../utils/js/aboutMeAnimation';
+import aboutMeData from '../../datas/aboutme.json';
 
 function AboutMe() {
-  const [displayedText, setDisplayedText] = useState({
-    name: '',
-    age: '',
-    description: ''
-  });
+  const [displayedText, setDisplayedText] = useState({});
 
   useEffect(() => {
-    const fullText = {
-      name: 'Lucas Dunis',
-      age: '23 ans',
-      description: "Développeur passionné par la création d'expériences web innovantes. J'aime transformer des idées en code et repousser les limites du possible avec les technologies modernes."
-    };
-    
-    const cleanup = animateTyping(fullText, setDisplayedText);
-    return cleanup;
+    return animateTyping(aboutMeData, setDisplayedText);
   }, []);
 
   return (
@@ -51,7 +41,7 @@ function AboutMe() {
             <div className="about-me__section">
               <p className="about-me__label" aria-hidden="true">&gt; name:</p>
               <h1 className="about-me__name" id="about-name">
-                {displayedText.name}
+                {displayedText.name || ''}
                 <span className="about-me__cursor" aria-hidden="true">_</span>
               </h1>
             </div>
@@ -59,8 +49,8 @@ function AboutMe() {
             <div className="about-me__section">
               <p className="about-me__label" aria-hidden="true">&gt; age:</p>
               <p className="about-me__age">
-                {displayedText.age}
-                {displayedText.age.length < '23 ans'.length && (
+                {displayedText.age || ''}
+                {(displayedText.age?.length || 0) < aboutMeData.age.length && (
                   <span className="about-me__cursor" aria-hidden="true">_</span>
                 )}
               </p>
@@ -71,8 +61,8 @@ function AboutMe() {
             <div className="about-me__section">
               <p className="about-me__label" aria-hidden="true">&gt; description:</p>
               <p className="about-me__description">
-                {displayedText.description}
-                {displayedText.description.length < 160 && (
+                {displayedText.description || ''}
+                {(displayedText.description?.length || 0) < aboutMeData.description.length && (
                   <span className="about-me__cursor" aria-hidden="true">_</span>
                 )}
               </p>

@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { 
+  checkIfMobile, 
+  scrollToSection, 
+  setupNavigationListeners 
+} from '../utils/js/navigation';
 
 function NavigationMenu() {
   const [isVisible, setIsVisible] = useState(false);
@@ -7,61 +12,19 @@ function NavigationMenu() {
 
   // Détection mobile
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window);
+    const handleResize = () => {
+      setIsMobile(checkIfMobile());
     };
     
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Gestion de la visibilité du menu
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      // Afficher le menu si la souris est dans les 50px du haut
-      if (e.clientY < 50 && !hovering) {
-        setIsVisible(true);
-      } else if (e.clientY > 100 && !hovering) {
-        setIsVisible(false);
-      }
-    };
-
-    // Gestion du touch pour mobile
-    const handleTouchStart = (e) => {
-      if (e.touches[0].clientY < 50) {
-        setIsVisible(true);
-      }
-    };
-
-    const handleTouchMove = (e) => {
-      if (e.touches[0].clientY > 100 && !hovering) {
-        setIsVisible(false);
-      }
-    };
-
-    if (!isMobile) {
-      window.addEventListener('mousemove', handleMouseMove);
-    } else {
-      window.addEventListener('touchstart', handleTouchStart);
-      window.addEventListener('touchmove', handleTouchMove);
-    }
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('touchmove', handleTouchMove);
-    };
+    return setupNavigationListeners(isMobile, hovering, setIsVisible);
   }, [hovering, isMobile]);
-
-  const scrollToSection = (sectionIndex) => {
-    const sections = document.querySelectorAll('[data-section]');
-    if (sections[sectionIndex]) {
-      sections[sectionIndex].scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  };
 
   const menuItems = [
     { name: 'About Me', icon: '>', index: 0 },

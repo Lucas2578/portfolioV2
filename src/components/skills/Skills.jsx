@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { animateSequentially } from '../utils/js/animations';
+import { setupIntersectionObserver } from '../utils/js/intersectionObserver';
 
 function Skills() {
   const [visibleSkills, setVisibleSkills] = useState([]);
@@ -18,41 +20,15 @@ function Skills() {
     { name: 'Git', level: 80, category: 'tools', icon: 'fa-brands fa-git-alt' }
   ];
 
+  // Intersection Observer
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !isVisible) {
-            setIsVisible(true);
-          }
-        });
-      },
-      {
-        threshold: 0.2,
-        rootMargin: '0px'
-      }
-    );
-
-    const currentRef = sectionRef.current;
-
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
+    return setupIntersectionObserver(sectionRef, setIsVisible, isVisible);
   }, [isVisible]);
 
+  // Animation séquentielle
   useEffect(() => {
     if (isVisible) {
-      skills.forEach((_, index) => {
-        setTimeout(() => {
-          setVisibleSkills(prev => [...prev, index]);
-        }, index * 200);
-      });
+      animateSequentially(skills, setVisibleSkills);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isVisible]);
