@@ -1,0 +1,9 @@
+@use './base/base';
+@use './utils/variables' as *;
+@use './components/aboutme/aboutme';
+@use './components/spacer/spacer';
+@use './components/skills/skills';
+@use './components/projects/projects';
+@use './components/navigation/navigation';
+@use './components/contact/contact';
+@use './layout/footer/footer';

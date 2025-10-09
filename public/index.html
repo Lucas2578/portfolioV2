@@ -1,43 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/assets/others/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#0a0a0a" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Lucas Dunis - Développeur Full-Stack | Portfolio</title>
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Portfolio de Lucas Dunis, développeur full-stack. Découvrez mes projets web et applications."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    <meta name="keywords" content="développeur, full-stack, portfolio, web developer, Lucas Dunis" />
+    <meta name="author" content="Lucas Dunis" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dunis-lucas.vercel.app/" />
+    <meta property="og:title" content="Lucas Dunis - Développeur Full-Stack | Portfolio" />
+    <meta property="og:description" content="Portfolio de Lucas Dunis, développeur full-stack. Découvrez mes projets web et applications." />
+    <meta property="og:image" content="%PUBLIC_URL%/assets/others/og-image.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://dunis-lucas.vercel.app/" />
+    <meta property="twitter:title" content="Lucas Dunis - Développeur Full-Stack | Portfolio" />
+    <meta property="twitter:description" content="Portfolio de Lucas Dunis, développeur full-stack." />
+    <meta property="twitter:image" content="%PUBLIC_URL%/og-image.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dunis-lucas.vercel.app/" />
+    
+    <!-- Icons -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/assets/others/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Lucas Dunis",
+      "jobTitle": "Développeur Full-Stack",
+      "url": "https://dunis-lucas.vercel.app",
+      "sameAs": [
+        "https://github.com/Lucas2578",
+        "https://www.linkedin.com/in/lucas-dunis-431b07308/"
+      ],
+      "knowsAbout": ["React", "JavaScript", "Node.js", "Go", "CSS", "HTML", "SCSS", "C", "C++", "Java"],
+      "description": "Développeur full-stack"
+    }
+    </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>Vous devez activer JavaScript pour utiliser ce site.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

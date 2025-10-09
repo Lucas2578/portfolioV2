@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "name": "net-cat",
+    "description": "Chat TCP multi-utilisateurs en ligne de commande",
+    "technologies": ["GO", "TCP/IP"],
+    "github": "https://github.com/Lucas2578/net-cat",
+    "collaborators": ["Tristan Dumoulin"],
+    "images": [
+      "./assets/projects/net-cat/1.png"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "frenchsky",
+    "description": "Serveur Minecraft avec plugins customs et infrastructure complète",
+    "technologies": ["Java", "Spigot API", "Bash", "MariaDB"],
+    "github": "https://frenchsky.net/",
+    "collaborators": ["Lucas Durand"],
+    "images": [
+      "./assets/projects/frenchsky/1.png"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "ohmyfood",
+    "description": "Site vitrine d'un restaurant fictif",
+    "technologies": ["HTML", "SCSS"],
+    "github": "https://github.com/Lucas2578/Ohmyfood",
+    "collaborators": [""],
+    "images": [
+      "./assets/projects/ohmyfood/1.png",
+      "./assets/projects/ohmyfood/2.png"
+    ]
+  }
+]

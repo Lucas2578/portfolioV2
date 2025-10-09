@@ -1,0 +1,309 @@
+@use '../../utils/variables' as *;
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+
+  &__container {
+    max-width: 48rem;
+    width: 100%;
+  }
+
+  &__card {
+    position: relative;
+    background: rgba($bg-card, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($matrix-blue, 0.3);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 
+      0 0 20px rgba($matrix-blue, 0.15),
+      0 25px 50px -12px rgba($black-deep, 0.5);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &--visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__glow {
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, 
+      rgba($matrix-blue, 0.1), 
+      rgba($electric-blue, 0.05),
+      rgba($purple-neon, 0.05)
+    );
+    border-radius: 0.5rem;
+    filter: blur(20px);
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__prompt {
+    color: $matrix-blue;
+    font-size: 1.5rem;
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  &__filename {
+    color: $matrix-blue-light;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  &__section {
+    margin-bottom: 1.5rem;
+  }
+
+  &__label {
+    color: $text-subtle;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+    font-weight: 400;
+  }
+
+  &__title {
+    color: $matrix-blue;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 10px rgba($matrix-blue, 0.5);
+  }
+
+  &__cursor {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    color: $matrix-blue-light;
+  }
+
+  &__separator {
+    border: none;
+    border-top: 1px solid rgba($matrix-blue-dark, 0.5);
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 2px rgba($matrix-blue, 0.1);
+    height: 0;
+  }
+
+  &__description {
+    color: $text-secondary;
+    line-height: 1.75;
+    font-size: 1rem;
+    font-family: 'Fira Code', monospace;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    background: rgba($gray-matrix, 0.5);
+    border: 1px solid rgba($matrix-blue, 0.2);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+    overflow: hidden;
+
+    &--visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    &:hover {
+      border-color: white;
+      box-shadow: 0 0 10px rgba($matrix-blue, 0.8);
+      border-color: $matrix-blue;
+      transform: translateX(5px);
+
+      .contact__link-glow {
+        opacity: 1;
+      }
+
+      .contact__link-icon {
+        transform: scale(1.1);
+        color: white;
+      }
+
+      .contact__link-arrow {
+        transform: translate(3px, -3px);
+        opacity: 1;
+      }
+    }
+  }
+
+  &__link-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, 
+      transparent,
+      rgba($matrix-blue, 0.05),
+      transparent
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &__link-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &__link-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background: rgba($matrix-blue, 0.1);
+    border: 1px solid rgba($matrix-blue, 0.3);
+    border-radius: 0.5rem;
+    color: $matrix-blue;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  &__link-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  &__link-name {
+    color: $text-secondary;
+    font-family: 'Fira Code', monospace;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  &__link-description {
+    color: $text-subtle;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+
+  &__link-arrow {
+    color: $matrix-blue-light;
+    font-size: 1rem;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+  }
+
+  &__footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba($matrix-blue-dark, 0.3);
+  }
+
+  &__footer-text {
+    color: $text-subtle;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    font-weight: 400;
+
+    &--blink {
+      font-size: 0.75rem;
+      margin-top: 1rem;
+      animation: smoothGlow 4s ease-in-out infinite;
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: $matrix-blue-light;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba($matrix-blue-light, 0.8);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+    &--top {
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+
+    &--bottom {
+      bottom: 0.5rem;
+      left: 0.5rem;
+      animation-delay: 0.5s;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes smoothGlow {
+  0%, 100% {
+    color: $text-subtle;
+    text-shadow: none;
+  }
+  50% {
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+}
+
+// Responsive
+@media (max-width: 640px) {
+  .contact {
+    &__link-content {
+      gap: 1rem;
+    }
+
+    &__link-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 1.25rem;
+    }
+
+    &__link-name {
+      font-size: 1rem;
+    }
+
+    &__link-description {
+      font-size: 0.75rem;
+    }
+  }
+}

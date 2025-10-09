@@ -1,0 +1,226 @@
+@use '../../utils/variables' as *;
+
+.footer {
+  position: relative;
+  width: 100%;
+  padding: 3rem 2rem 2rem;
+  margin-top: 4rem;
+  
+  &__container {
+    position: relative;
+    max-width: 64rem;
+    margin: 0 auto;
+    background: rgba($bg-card, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($matrix-blue, 0.3);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 
+      0 0 20px rgba($matrix-blue, 0.15),
+      0 -10px 30px rgba($black-deep, 0.3);
+  }
+
+  &__glow {
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, 
+      rgba($matrix-blue, 0.1), 
+      rgba($electric-blue, 0.05),
+      rgba($purple-neon, 0.05)
+    );
+    border-radius: 0.5rem;
+    filter: blur(20px);
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__prompt {
+    color: $matrix-blue;
+    font-size: 1.25rem;
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  &__text {
+    color: $matrix-blue-light;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  &__separator {
+    border-top: 1px solid rgba($matrix-blue-dark, 0.5);
+    box-shadow: 0 1px 2px rgba($matrix-blue, 0.1);
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__line {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.875rem;
+  }
+
+  &__label {
+    color: $text-subtle;
+    font-weight: 400;
+  }
+
+  &__value {
+    color: $text-secondary;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &--green {
+        color: $neon-green;
+    }
+  }
+
+  &__dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: $neon-green;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba($neon-green, 0.8);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  &__copyright {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba($matrix-blue-dark, 0.3);
+    text-align: center;
+  }
+
+  &__copyright-text {
+    color: $text-secondary;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  &__copyright-subtext {
+    color: $text-subtle;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    font-weight: 400;
+    animation: smoothGlow 4s ease-in-out infinite;
+  }
+
+  &__heart {
+    color: #ff006e;
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+
+  &__author {
+    color: $matrix-blue-light;
+    font-weight: 600;
+  }
+
+  &__dot-corner {
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: $matrix-blue-light;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba($matrix-blue-light, 0.8);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+    &--left {
+      bottom: 0.5rem;
+      left: 0.5rem;
+    }
+
+    &--right {
+      top: 0.5rem;
+      right: 0.5rem;
+      animation-delay: 0.5s;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes smoothGlow {
+  0%, 100% {
+    color: $text-subtle;
+    text-shadow: none;
+  }
+  50% {
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1rem 1.5rem;
+    margin-top: 3rem;
+
+    &__container {
+      padding: 1.5rem;
+    }
+
+    &__line {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+
+    &__copyright-text {
+      font-size: 0.75rem;
+    }
+
+    &__copyright-subtext {
+      font-size: 0.625rem;
+    }
+  }
+}

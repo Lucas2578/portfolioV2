@@ -1,0 +1,31 @@
+// _variables.scss - Matrix Blue Theme
+
+// Couleurs principales Matrix Bleu
+$matrix-blue: #00D4FF;
+$matrix-blue-light: #39E0FF;
+$matrix-blue-dark: #0088CC;
+
+// Palette neutre
+$black-deep: #020608;
+$black-matrix: #050B0E;
+$gray-matrix: #0F1A1F;
+$gray-blue: #1A2F3E;
+$gray-medium: #2A3F50;
+
+// Texte
+$text-matrix: #00D4FF;
+$text-secondary: #00B8E6;
+$text-subtle: #5B8EA3;
+
+// Accents
+$cyan-digital: #00FFFF;
+$electric-blue: #0AF;
+$red-system: #FF0040;
+$purple-neon: #B026FF;
+$neon-green: #00FF9F;
+
+// Alias utiles
+$bg-main: $black-deep;
+$bg-card: $black-matrix;
+$border: $gray-matrix;
+$primary: $matrix-blue;

@@ -1,0 +1,25 @@
+{
+  "contactLinks": [
+    {
+      "name": "CV",
+      "icon": "fa-solid fa-file-arrow-down",
+      "url": "/assets/others/cv.pdf",
+      "color": "#00FF9F",
+      "description": "Téléchargez mon CV"
+    },
+    {
+      "name": "LinkedIn",
+      "icon": "fa-brands fa-linkedin",
+      "url": "https://www.linkedin.com/in/lucas-dunis-431b07308/",
+      "color": "#0077B5",
+      "description": "Connectez-vous avec moi"
+    },
+    {
+      "name": "GitHub",
+      "icon": "fa-brands fa-github",
+      "url": "https://github.com/Lucas2578",
+      "color": "#FFFFFF",
+      "description": "Consultez mon GitHub"
+    }
+  ]
+}   
