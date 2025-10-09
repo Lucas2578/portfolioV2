@@ -3,6 +3,18 @@ import React, { useState, useEffect } from 'react';
 function NavigationMenu() {
   const [isVisible, setIsVisible] = useState(false);
   const [hovering, setHovering] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Détection mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -14,9 +26,32 @@ function NavigationMenu() {
       }
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, [hovering]);
+    // Gestion du touch pour mobile
+    const handleTouchStart = (e) => {
+      if (e.touches[0].clientY < 50) {
+        setIsVisible(true);
+      }
+    };
+
+    const handleTouchMove = (e) => {
+      if (e.touches[0].clientY > 100 && !hovering) {
+        setIsVisible(false);
+      }
+    };
+
+    if (!isMobile) {
+      window.addEventListener('mousemove', handleMouseMove);
+    } else {
+      window.addEventListener('touchstart', handleTouchStart);
+      window.addEventListener('touchmove', handleTouchMove);
+    }
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, [hovering, isMobile]);
 
   const scrollToSection = (sectionIndex) => {
     const sections = document.querySelectorAll('[data-section]');
@@ -40,13 +75,17 @@ function NavigationMenu() {
       {/* Indicateur pour faire apparaître le menu */}
       <div className={`nav-hint ${isVisible ? 'nav-hint--hidden' : ''}`}>
         <div className="nav-hint__arrow">▼</div>
-        <div className="nav-hint__text">Hover to navigate</div>
+        <div className="nav-hint__text">
+          {isMobile ? 'Click to navigate' : 'Hover to navigate'}
+        </div>
       </div>
 
       <div 
         className={`nav-menu ${isVisible ? 'nav-menu--visible' : ''}`}
-        onMouseEnter={() => setHovering(true)}
-        onMouseLeave={() => setHovering(false)}
+        onMouseEnter={() => !isMobile && setHovering(true)}
+        onMouseLeave={() => !isMobile && setHovering(false)}
+        onTouchStart={() => isMobile && setHovering(true)}
+        onTouchEnd={() => isMobile && setHovering(false)}
       >
         <div className="nav-menu__glow"></div>
         
