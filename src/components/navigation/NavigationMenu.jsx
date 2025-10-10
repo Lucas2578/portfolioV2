@@ -41,7 +41,6 @@ function NavigationMenu() {
 
   return (
     <>
-      {/* Indicateur pour faire apparaître le menu */}
       <div className={`nav-hint ${isVisible ? 'nav-hint--hidden' : ''}`}>
         <div className="nav-hint__arrow">▼</div>
         <div className="nav-hint__text">
@@ -68,7 +67,6 @@ function NavigationMenu() {
           <ul className="nav-menu__items">
             {menuItems.map((item, idx) => (
               <li key={idx}>
-                {/* Utilisation de <a> au lieu de <button> pour le SEO */}
                 <a
                   href={item.href}
                   className="nav-menu__item"

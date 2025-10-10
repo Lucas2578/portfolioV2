@@ -40,7 +40,6 @@ function AboutMe() {
 
             <div className="about-me__section">
               <p className="about-me__label" aria-hidden="true">&gt; name:</p>
-              {/* H1 unique de la page - Identité principale */}
               <h1 className="about-me__name" id="about-name">
                 {displayedText.name || ''}
                 <span className="about-me__cursor" aria-hidden="true">_</span>

@@ -85,10 +85,8 @@ function Home() {
 
   return (
     <>
-      {/* Menu de navigation (fixed, pas dans une section) */}
       <NavigationMenu />
       
-      {/* Sections */}
       <div ref={(el) => (sectionsRef.current[0] = el)} data-section="0">
         <AboutMe />
       </div>

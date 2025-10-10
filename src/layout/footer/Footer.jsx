@@ -16,7 +16,6 @@ function Footer() {
         <div className="footer__glow"></div>
         
         <div className="footer__content">
-          {/* Section principale */}
           <div className="footer__main">
             <div className="footer__brand">
               <span className="footer__prompt">&gt;</span>
@@ -44,7 +43,6 @@ function Footer() {
             </div>
           </div>
 
-          {/* Navigation interne améliorée */}
           <nav className="footer__nav" aria-label="Navigation du pied de page">
             <div className="footer__nav-header">
               <span className="footer__nav-prompt">&gt;_</span>
@@ -67,7 +65,6 @@ function Footer() {
             </div>
           </nav>
 
-          {/* Copyright */}
           <div className="footer__copyright">
             <p className="footer__copyright-text">
               © {currentYear} - Made with <span className="footer__heart">♥</span> by <span className="footer__author">Dunis Lucas</span>
