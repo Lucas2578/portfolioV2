@@ -116,6 +116,141 @@
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
+  // Navigation améliorée
+  &__nav {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: rgba($black-deep, 0.3);
+    border: 1px solid rgba($matrix-blue, 0.2);
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, 
+        transparent,
+        rgba($matrix-blue, 0.5),
+        transparent
+      );
+    }
+
+    &-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    &-prompt {
+      color: $matrix-blue;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.875rem;
+      font-weight: 700;
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    &-title {
+      font-size: 0.875rem;
+      color: $matrix-blue-light;
+      margin: 0;
+      text-transform: lowercase;
+      letter-spacing: 0.05em;
+      font-family: 'Fira Code', monospace;
+      font-weight: 600;
+    }
+
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem;
+    }
+
+    &-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 1rem;
+      background: rgba($bg-card, 0.5);
+      border: 1px solid rgba($matrix-blue, 0.2);
+      border-radius: 0.375rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      overflow: hidden;
+
+      &:hover {
+        background: rgba($bg-card, 0.8);
+        border-color: rgba($matrix-blue, 0.6);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba($matrix-blue, 0.2);
+
+        .footer__nav-card-glow {
+          opacity: 1;
+        }
+
+        .footer__nav-card-arrow {
+          transform: translateX(4px);
+          opacity: 1;
+        }
+
+        .footer__nav-card-number {
+          color: $matrix-blue;
+        }
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+
+    &-card-glow {
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, 
+        rgba($matrix-blue, 0.1),
+        rgba($electric-blue, 0.05)
+      );
+      border-radius: 0.375rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    &-card-number {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.75rem;
+      color: $text-subtle;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      transition: color 0.3s ease;
+    }
+
+    &-card-label {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.875rem;
+      color: $text-secondary;
+      font-weight: 500;
+      letter-spacing: 0.025em;
+    }
+
+    &-card-arrow {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      color: $matrix-blue;
+      font-size: 1rem;
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: all 0.3s ease;
+    }
+  }
+
   &__copyright {
     padding-top: 1.5rem;
     border-top: 1px solid rgba($matrix-blue-dark, 0.3);
@@ -213,6 +348,19 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 0.25rem;
+    }
+
+    &__nav {
+      padding: 1rem;
+
+      &-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+      }
+
+      &-card {
+        padding: 0.75rem;
+      }
     }
 
     &__copyright-text {

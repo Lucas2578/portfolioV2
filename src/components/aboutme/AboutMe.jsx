@@ -23,7 +23,7 @@ function AboutMe() {
             <div className="about-me__photo-container">
               <div className="about-me__photo-glow" aria-hidden="true"></div>
               <img 
-                src="/assets/others/me.png" 
+                src="/assets/others/me.webp" 
                 alt="Portrait de Lucas Dunis, développeur web" 
                 className="about-me__photo"
                 loading="eager"
@@ -40,6 +40,7 @@ function AboutMe() {
 
             <div className="about-me__section">
               <p className="about-me__label" aria-hidden="true">&gt; name:</p>
+              {/* H1 unique de la page - Identité principale */}
               <h1 className="about-me__name" id="about-name">
                 {displayedText.name || ''}
                 <span className="about-me__cursor" aria-hidden="true">_</span>

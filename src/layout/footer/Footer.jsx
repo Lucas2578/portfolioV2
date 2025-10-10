@@ -3,6 +3,13 @@ import React from 'react';
 function Footer() {
   const currentYear = new Date().getFullYear();
 
+  const navItems = [
+    { href: '#about', label: 'À propos', icon: '01' },
+    { href: '#skills', label: 'Compétences', icon: '02' },
+    { href: '#projects', label: 'Projets', icon: '03' },
+    { href: '#contact', label: 'Contact', icon: '04' }
+  ];
+
   return (
     <footer className="footer">
       <div className="footer__container">
@@ -36,6 +43,29 @@ function Footer() {
               </p>
             </div>
           </div>
+
+          {/* Navigation interne améliorée */}
+          <nav className="footer__nav" aria-label="Navigation du pied de page">
+            <div className="footer__nav-header">
+              <span className="footer__nav-prompt">&gt;_</span>
+              <h2 className="footer__nav-title">quick_access.sh</h2>
+            </div>
+            
+            <div className="footer__nav-grid">
+              {navItems.map((item, index) => (
+                <a 
+                  key={index}
+                  href={item.href} 
+                  className="footer__nav-card"
+                >
+                  <div className="footer__nav-card-glow"></div>
+                  <span className="footer__nav-card-number">{item.icon}</span>
+                  <span className="footer__nav-card-label">{item.label}</span>
+                  <span className="footer__nav-card-arrow">→</span>
+                </a>
+              ))}
+            </div>
+          </nav>
 
           {/* Copyright */}
           <div className="footer__copyright">

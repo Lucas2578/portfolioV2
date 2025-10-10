@@ -26,6 +26,7 @@ function Contact() {
 
             <div className="contact__section">
               <p className="contact__label" aria-hidden="true">&gt; connect:</p>
+              {/* H2 - Titre de section principale */}
               <h2 className="contact__title" id="contact-title">
                 Connectons-nous
                 <span className="contact__cursor" aria-hidden="true">_</span>

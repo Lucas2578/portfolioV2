@@ -7,7 +7,7 @@
     "github": "https://github.com/Lucas2578/net-cat",
     "collaborators": ["Tristan Dumoulin"],
     "images": [
-      "./assets/projects/net-cat/1.png"
+      "./assets/projects/net-cat/1.webp"
     ]
   },
   {
@@ -18,7 +18,7 @@
     "github": "https://frenchsky.net/",
     "collaborators": ["Lucas Durand"],
     "images": [
-      "./assets/projects/frenchsky/1.png"
+      "./assets/projects/frenchsky/1.webp"
     ]
   },
   {
@@ -29,8 +29,8 @@
     "github": "https://github.com/Lucas2578/Ohmyfood",
     "collaborators": [""],
     "images": [
-      "./assets/projects/ohmyfood/1.png",
-      "./assets/projects/ohmyfood/2.png"
+      "./assets/projects/ohmyfood/1.webp",
+      "./assets/projects/ohmyfood/2.webp"
     ]
   }
 ]

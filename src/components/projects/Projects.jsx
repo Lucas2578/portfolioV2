@@ -68,7 +68,12 @@ function Projects() {
   const currentProjects = getProjectsToDisplay(projectsData, startIndex, projectsToShow);
 
   return (
-    <section className="projects" ref={sectionRef}>
+    <section 
+      className="projects" 
+      ref={sectionRef}
+      id="projects"
+      aria-labelledby="projects-title"
+    >
       <div className="projects__container">
         <div className={`projects__card ${isVisible ? 'projects__card--visible' : ''}`}>
           <div className="projects__glow"></div>
@@ -81,10 +86,10 @@ function Projects() {
 
             <div className="projects__section">
               <p className="projects__label">&gt; loading_projects:</p>
-              <h1 className="projects__title">
+              <h2 className="projects__title" id="projects-title">
                 Mes Projets
                 <span className="projects__cursor">_</span>
-              </h1>
+              </h2>
             </div>
 
             <hr className="projects__separator" />
@@ -154,11 +159,11 @@ function Projects() {
                   )}
 
                   <div className="projects__item-header">
-                    <h2 className="projects__item-name" itemProp="name">
+                    <h3 className="projects__item-name" itemProp="name">
                       <span className="projects__bracket">&lt;</span>
                       {project.name}
                       <span className="projects__bracket">/&gt;</span>
-                    </h2>
+                    </h3>
                     {project.description && (
                       <p className="projects__item-description" itemProp="description">
                         {project.description}

@@ -42,6 +42,7 @@ function Skills() {
 
             <div className="skills__section">
               <p className="skills__label" aria-hidden="true">&gt; loading_skills:</p>
+              {/* H2 - Titre de section principale */}
               <h2 className="skills__title" id="skills-title">
                 Mes Compétences
                 <span className="skills__cursor" aria-hidden="true">_</span>
@@ -57,6 +58,7 @@ function Skills() {
                   className={`skills__item ${visibleSkills.includes(index) ? 'skills__item--visible' : ''}`}
                 >
                   <div className="skills__item-header">
+                    {/* Pas de heading ici car ce sont des items de liste */}
                     <span className="skills__item-name">
                       <span className="skills__bracket" aria-hidden="true">[</span>
                       {skill.name}

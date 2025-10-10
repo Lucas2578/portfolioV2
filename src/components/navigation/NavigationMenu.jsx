@@ -27,11 +27,17 @@ function NavigationMenu() {
   }, [hovering, isMobile]);
 
   const menuItems = [
-    { name: 'About Me', icon: '>', index: 0 },
-    { name: 'Skills', icon: '#', index: 1 },
-    { name: 'Projects', icon: '$', index: 2 },
-    { name: 'Contacts', icon: '>', index: 3 }
+    { name: 'About Me', icon: '>', index: 0, href: '#about' },
+    { name: 'Skills', icon: '#', index: 1, href: '#skills' },
+    { name: 'Projects', icon: '$', index: 2, href: '#projects' },
+    { name: 'Contacts', icon: '+', index: 3, href: '#contact' }
   ];
+
+  // Handler pour le clic - empêche le comportement par défaut et scroll smooth
+  const handleClick = (e, index) => {
+    e.preventDefault();
+    scrollToSection(index);
+  };
 
   return (
     <>
@@ -43,12 +49,13 @@ function NavigationMenu() {
         </div>
       </div>
 
-      <div 
+      <nav 
         className={`nav-menu ${isVisible ? 'nav-menu--visible' : ''}`}
         onMouseEnter={() => !isMobile && setHovering(true)}
         onMouseLeave={() => !isMobile && setHovering(false)}
         onTouchStart={() => isMobile && setHovering(true)}
         onTouchEnd={() => isMobile && setHovering(false)}
+        aria-label="Navigation principale"
       >
         <div className="nav-menu__glow"></div>
         
@@ -58,25 +65,28 @@ function NavigationMenu() {
             <span className="nav-menu__text">PORTFOLIO.sys</span>
           </div>
 
-          <nav className="nav-menu__items">
+          <ul className="nav-menu__items">
             {menuItems.map((item, idx) => (
-              <button
-                key={idx}
-                className="nav-menu__item"
-                onClick={() => scrollToSection(item.index)}
-              >
-                <span className="nav-menu__icon">{item.icon}</span>
-                <span className="nav-menu__label">{item.name}</span>
-              </button>
+              <li key={idx}>
+                {/* Utilisation de <a> au lieu de <button> pour le SEO */}
+                <a
+                  href={item.href}
+                  className="nav-menu__item"
+                  onClick={(e) => handleClick(e, item.index)}
+                >
+                  <span className="nav-menu__icon">{item.icon}</span>
+                  <span className="nav-menu__label">{item.name}</span>
+                </a>
+              </li>
             ))}
-          </nav>
+          </ul>
 
           <div className="nav-menu__indicator">
             <span className="nav-menu__dot"></span>
             <span className="nav-menu__status">ONLINE</span>
           </div>
         </div>
-      </div>
+      </nav>
     </>
   );
 }
