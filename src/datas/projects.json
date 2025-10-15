@@ -32,5 +32,18 @@
       "./assets/projects/ohmyfood/1.webp",
       "./assets/projects/ohmyfood/2.webp"
     ]
+  },
+  {
+    "id": 4,
+    "name": "lem-in",
+    "description": "Simulation algorithmique du déplacement optimal de fourmis dans un graphe",
+    "technologies": ["GO"],
+    "github": "https://github.com/Lucas2578/lem-in",
+    "collaborators": ["Louis-Adrien Debey", "Tristan Dumoulin"],
+    "images": [
+      "./assets/projects/lem-in/1.webp",
+      "./assets/projects/lem-in/2.webp",
+      "./assets/projects/lem-in/3.webp"
+    ]
   }
 ]
