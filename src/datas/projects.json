@@ -45,5 +45,16 @@
       "./assets/projects/lem-in/2.webp",
       "./assets/projects/lem-in/3.webp"
     ]
+  },
+  {
+    "id": 5,
+    "name": "crossword",
+    "description": "Résolveur algorithmique de mots croisés",
+    "technologies": ["JavaScript"],
+    "github": "https://github.com/Lucas2578/crossword",
+    "collaborators": ["Nathan Allain"],
+    "images": [
+      "./assets/projects/crossword/1.webp"
+    ]
   }
 ]
