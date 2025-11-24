@@ -56,5 +56,17 @@
     "images": [
       "./assets/projects/crossword/1.webp"
     ]
+  },
+  {
+    "id": 6,
+    "name": "clonernews",
+    "description": "Site web moderne utilisant l'API Hacker News",
+    "technologies": ["JavaScript", "HTML", "CSS"],
+    "github": "https://github.com/Lucas2578/clonernews",
+    "collaborators": ["Audrey Doublet", "Oscar Hernandez", "Valentine Ladjyn", "William Forrest"],
+    "images": [
+      "./assets/projects/clonernews/1.webp",
+      "./assets/projects/clonernews/2.webp"
+    ]
   }
 ]
