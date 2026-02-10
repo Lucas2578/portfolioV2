@@ -3,9 +3,14 @@
     "id": 1,
     "name": "net-cat",
     "description": "Chat TCP multi-utilisateurs en ligne de commande",
-    "technologies": ["GO", "TCP/IP"],
+    "technologies": [
+      "GO",
+      "TCP/IP"
+    ],
     "github": "https://github.com/Lucas2578/net-cat",
-    "collaborators": ["Tristan Dumoulin"],
+    "collaborators": [
+      "Tristan Dumoulin"
+    ],
     "images": [
       "./assets/projects/net-cat/1.webp"
     ]
@@ -14,9 +19,16 @@
     "id": 2,
     "name": "frenchsky",
     "description": "Serveur Minecraft avec plugins customs et infrastructure complète",
-    "technologies": ["Java", "Spigot API", "Bash", "MariaDB"],
+    "technologies": [
+      "Java",
+      "Spigot API",
+      "Bash",
+      "MariaDB"
+    ],
     "github": "https://frenchsky.net/",
-    "collaborators": ["Lucas Durand"],
+    "collaborators": [
+      "Lucas Durand"
+    ],
     "images": [
       "./assets/projects/frenchsky/1.webp"
     ]
@@ -25,9 +37,14 @@
     "id": 3,
     "name": "ohmyfood",
     "description": "Site vitrine d'un restaurant fictif",
-    "technologies": ["HTML", "SCSS"],
+    "technologies": [
+      "HTML",
+      "SCSS"
+    ],
     "github": "https://github.com/Lucas2578/Ohmyfood",
-    "collaborators": [""],
+    "collaborators": [
+      ""
+    ],
     "images": [
       "./assets/projects/ohmyfood/1.webp",
       "./assets/projects/ohmyfood/2.webp"
@@ -37,9 +54,14 @@
     "id": 4,
     "name": "lem-in",
     "description": "Simulation algorithmique du déplacement optimal de fourmis dans un graphe",
-    "technologies": ["GO"],
+    "technologies": [
+      "GO"
+    ],
     "github": "https://github.com/Lucas2578/lem-in",
-    "collaborators": ["Louis-Adrien Debey", "Tristan Dumoulin"],
+    "collaborators": [
+      "Louis-Adrien Debey",
+      "Tristan Dumoulin"
+    ],
     "images": [
       "./assets/projects/lem-in/1.webp",
       "./assets/projects/lem-in/2.webp",
@@ -50,9 +72,13 @@
     "id": 5,
     "name": "crossword",
     "description": "Résolveur algorithmique de mots croisés",
-    "technologies": ["JavaScript"],
+    "technologies": [
+      "JavaScript"
+    ],
     "github": "https://github.com/Lucas2578/crossword",
-    "collaborators": ["Nathan Allain"],
+    "collaborators": [
+      "Nathan Allain"
+    ],
     "images": [
       "./assets/projects/crossword/1.webp"
     ]
@@ -61,12 +87,55 @@
     "id": 6,
     "name": "clonernews",
     "description": "Site web moderne utilisant l'API Hacker News",
-    "technologies": ["JavaScript", "HTML", "CSS"],
+    "technologies": [
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
     "github": "https://github.com/Lucas2578/clonernews",
-    "collaborators": ["Audrey Doublet", "Oscar Hernandez", "Valentine Ladjyn", "William Forrest"],
+    "collaborators": [
+      "Audrey Doublet",
+      "Oscar Hernandez",
+      "Valentine Ladjyn",
+      "William Forrest"
+    ],
     "images": [
       "./assets/projects/clonernews/1.webp",
       "./assets/projects/clonernews/2.webp"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "make-your-game",
+    "description": "Jeu de plateforme en 2D en JavaScript pur",
+    "technologies": [
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "github": "https://github.com/Lucas2578/make-your-game",
+    "collaborators": [
+      "Kevin Loichot"
+    ],
+    "images": [
+      "./assets/projects/make-your-game/1.webp",
+      "./assets/projects/make-your-game/2.webp",
+      "./assets/projects/make-your-game/3.webp"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "atm-management-system",
+    "description": "Gestionnaire de compte bancaire avec interface graphique",
+    "technologies": [
+      "C"
+    ],
+    "github": "https://github.com/Lucas2578/atm-management-system",
+    "collaborators": [],
+    "images": [
+      "./assets/projects/atm-management-system/1.webp",
+      "./assets/projects/atm-management-system/2.webp",
+      "./assets/projects/atm-management-system/3.webp"
     ]
   }
 ]

@@ -65,6 +65,12 @@
       "level": 40,
       "category": "tools",
       "icon": "fa-solid fa-terminal"
+    },
+    {
+      "name": "PostgreSQL",
+      "level": 30,
+      "category": "backend",
+      "icon": "fa-solid fa-database"
     }
   ]
 }
