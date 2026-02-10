@@ -131,7 +131,9 @@
       "C"
     ],
     "github": "https://github.com/Lucas2578/atm-management-system",
-    "collaborators": [],
+    "collaborators": [
+      ""
+    ],
     "images": [
       "./assets/projects/atm-management-system/1.webp",
       "./assets/projects/atm-management-system/2.webp",
