@@ -8,7 +8,7 @@
     },
     {
       "name": "JavaScript",
-      "level": 30,
+      "level": 60,
       "category": "frontend",
       "icon": "fa-brands fa-js"
     },
@@ -38,7 +38,7 @@
     },
     {
       "name": "Java",
-      "level": 20,
+      "level": 35,
       "category": "backend",
       "icon": "fa-brands fa-java"
     },
@@ -50,7 +50,7 @@
     },
     {
       "name": "Docker",
-      "level": 10,
+      "level": 30,
       "category": "backend",
       "icon": "fa-brands fa-docker"
     },
